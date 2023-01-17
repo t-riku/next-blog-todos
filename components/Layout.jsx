@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
 
 // Layout.jsxは全てのコンポーネントをラップし共通のスタイルやレイアウトを適応させる
 export default function Layout({
