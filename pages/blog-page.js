@@ -38,6 +38,8 @@ export async function getStaticProps() {
   const filteredPosts = await getAllPostsData();
   return {
     props: { filteredPosts },
+    // インクリメンタルスタティックリジェネレーションにしたいときはrevalidateを追加するだけでOK
+    // HTML再生成は3秒間に1度だけ。たくさんのユーザーが見にきた時にサーバーに負荷がかかるため。
     revalidate: 3,
   };
 }
