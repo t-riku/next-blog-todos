@@ -40,3 +40,26 @@ export default function Post({ post }) {
     </Layout>
   );
 }
+
+export async function getStaticPaths() {
+  const paths = await getAllPostIds();
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+// 下記のreturnで返したpropsをPostに渡す
+export async function getStaticProps({ params }) {
+  //const { post: post } = await getPostData(params.id);
+  const post = await getPostData(params.id);
+  return {
+    props: {
+      post,
+    },
+    // インクリメンタルスタティックリジェネレーションにしたいときはrevalidateを追加するだけでOK
+    // HTML再生成は3秒間に1度だけ。たくさんのユーザーが見にきた時にサーバーに負荷がかかるため。
+    revalidate: 3,
+  };
+}
