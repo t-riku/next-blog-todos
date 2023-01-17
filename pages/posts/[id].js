@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData } from "lib/posts";
+import Layout from "components/Layout";
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function Post({ post }) {
       <p className="mb-12">{post.created_at}</p>
       <p className="px-10">{post.content}</p>
       <Link href="/blog-page">
-        <div className="flex cursor-pointer mt-12">
+        <div className="flex cursor-pointer mt-12 hover:bg-gray-600">
           <svg
             className="w-6 h-6 mr-3"
             fill="none"

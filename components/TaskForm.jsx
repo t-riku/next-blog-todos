@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StateContext } from "../context/StateContext";
+import { StateContext } from "context/StateContext";
 import Cookie from "universal-cookie";
 
 const cookie = new Cookie();
@@ -44,7 +44,7 @@ export default function TaskForm({ taskCreated }) {
     taskCreated();
   };
   return (
-    <div>
+    <div className="mb-3">
       <form onSubmit={selectedTask.id !== 0 ? update : create}>
         <input
           className="text-black mb-8 px-2 py-1"

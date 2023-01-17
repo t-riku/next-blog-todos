@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import Link from "next/link";
-import Layout from "../../components/Layout";
+import Layout from "components/Layout";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import { getAllTaskIds, getTaskData } from "../../lib/tasks";
+import { getAllTaskIds, getTaskData } from "lib/tasks";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -31,7 +31,7 @@ export default function Post({ staticTask, id }) {
       <p className="mb-4 text-xl font-bold">{task.title}</p>
       <p className="mb-12">{task.created_at}</p>
       <Link href="/task-page">
-        <div className="flex cursor-pointer mt-8">
+        <div className="flex cursor-pointer mt-8 hover:bg-gray-600">
           <svg
             className="w-6 h-6 mr-3"
             fill="none"

@@ -1,6 +1,6 @@
 import Layout from "components/Layout";
 import Link from "next/link";
-import { getAllPostsData } from "../lib/posts";
+import { getAllPostsData } from "lib/posts";
 import Post from "components/Post";
 
 export default function BlogPage({ filteredPosts }) {
@@ -11,7 +11,7 @@ export default function BlogPage({ filteredPosts }) {
           filteredPosts.map((post) => <Post key={post.id} post={post} />)}
       </ul>
       <Link href="/main-page">
-        <div className="flex cursor-pointer mt-12">
+        <div className="flex cursor-pointer mt-12 hover:bg-gray-600">
           <svg
             className="w-6 h-6 mr-3"
             fill="none"

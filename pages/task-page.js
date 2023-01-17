@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import Layout from "../components/Layout";
+import Layout from "components/Layout";
 import Link from "next/link";
-import { getAllTasksData } from "../lib/tasks";
-import Task from "../components/Task";
+import { getAllTasksData } from "lib/tasks";
+import Task from "components/Task";
 import useSWR from "swr";
-import StateContextProvider from "../context/StateContext";
-import TaskForm from "../components/TaskForm";
+import StateContextProvider from "context/StateContext";
+import TaskForm from "components/TaskForm";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const apiUrl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/list-task/`;
@@ -31,7 +31,7 @@ export default function TaskPage({ staticfilterdTasks }) {
             ))}
         </ul>
         <Link href="/main-page">
-          <div className="flex cursor-pointer mt-12">
+          <div className="flex cursor-pointer mt-12 hover:bg-gray-600">
             <svg
               className="w-6 h-6 mr-3"
               fill="none"

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Post({ post }) {
   return (
-    <div>
+    <div className="mb-4">
       <span>{post.id}</span>
       {" : "}
       <Link href={`/posts/${post.id}`}>
