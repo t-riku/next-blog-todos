@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Cookie from "universal-cookie";
 import { useContext } from "react";
-import { StateContext } from "../context/StateContext";
+import { StateContext } from "context/StateContext";
 
 const cookie = new Cookie();
 
@@ -24,7 +24,7 @@ export default function Task({ task, taskDeleted }) {
   };
 
   return (
-    <div>
+    <div className="mb-4">
       <span>{task.id}</span>
       {" : "}
       <Link href={`/tasks/${task.id}`}>
@@ -36,7 +36,7 @@ export default function Task({ task, taskDeleted }) {
       <div className="float-right ml-20">
         <svg
           onClick={() => setSelectedTask(task)}
-          className="w-6 h-6 float-left cursor-pointer"
+          className="w-6 h-6 float-left cursor-pointer hover:bg-gray-600 mr-2"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export default function Task({ task, taskDeleted }) {
         </svg>
         <svg
           onClick={deleteTask}
-          className="w-6 h-6 mr-2 cursor-pointer"
+          className="w-6 h-6 mr-2 cursor-pointer hover:bg-gray-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
